@@ -2,31 +2,46 @@ using System.Dynamic;
 
 namespace EspacioCalculadora
 {    
-    class Calculadora
+    public class Calculadora
     {
-        int dato = 0;
+        private double dato;
 
-    public void Sumar(double termino)
-        {
-            
-        }
-    public void Restar(double termino)
-        {
-            
-        }
-    public void Multiplicar(double termino)
-        {
-            
-        }
-    public void Dividir(double termino)
-        {
-            
-        }
-    public void Limpiar()
-        {
-            
+        public Calculadora(){
+            dato = 0;
         }
 
-    }
+        public void Sumar(double termino)
+        {
+            dato += termino;
+        }
+         public void Restar(double termino)
+        {
+            dato -= termino;
+        }
+         public void Multiplicar(double termino)
+        {
+            dato *= termino;
+        }
+         public void Dividir(double termino)
+        {
+            if(termino != 0)
+            {
+                dato /= termino;
+            }
+            else
+            {
+                Console.WriteLine("No admitido.");
+            }
+        }
+
+        public void Limpiar()
+        {
+            dato = 0;
+        } 
+        public double Resultado
+        {
+            get {return dato;}
+        }
+    
 }
-
+}
